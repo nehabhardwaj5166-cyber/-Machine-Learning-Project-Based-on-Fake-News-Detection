@@ -1,4 +1,4 @@
-# Verity — Fake News Detection with Machine Learning
+ — Fake News Detection with Machine Learning
 
 A Streamlit application for data cleaning, exploratory analysis, model comparison and experimental fake/real news classification.
 
