@@ -1,35 +1,52 @@
- — Fake News Detection with Machine Learning
+ #  Fake News Detection using Machine Learning
 
-A Streamlit application for data cleaning, exploratory analysis, model comparison and experimental fake/real news classification.
+A Python-only Streamlit application for exploring a labelled news dataset, cleaning text, comparing four classical machine-learning classifiers, and screening user-entered articles.
 
-## Dataset
-The included dataset is `data/fake_news_dataset.csv` (20,000 rows; columns: `title`, `text`, `date`, `source`, `author`, `category`, `label`).
+## Models
+1. Logistic Regression
+2. Multinomial Naive Bayes
+3. Linear Support Vector Machine (Linear SVM)
+4. Random Forest
 
-## Run locally
-```bash
+## Project structure
+```text
+fake_news_detection_project/
+├── app.py
+├── train_model.py
+├── requirements.txt
+├── README.md
+├── PROJECT_REPORT.md
+├── data/
+│   └── fake_news_dataset.csv
+├── models/                 # generated after training
+└── outputs/                # generated after training
+```
+
+## Setup (Windows PowerShell)
+```powershell
+cd fake_news_detection_project
 python -m venv .venv
-# Windows:
-.venv\\Scripts\\activate
-# macOS/Linux:
-source .venv/bin/activate
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+```.
+
+## Run dashboard
+```powershell
 streamlit run app.py
 ```
 Open the local URL printed by Streamlit (normally http://localhost:8501).
 
-## Features
-- Data quality audit, cleaning and cleaned CSV download
-- Interactive EDA with Plotly
-- TF-IDF text representation
-- Logistic Regression, Linear SVM, Multinomial Naive Bayes and Random Forest
-- Stratified 80/20 hold-out evaluation
-- Accuracy, precision, recall, F1, confusion matrix, classification report and ROC curve
-- Live text prediction using the best model by F1-score
+## Dataset
+The supplied `data/fake_news_dataset.csv` is included. Required columns are `title`, `text`, and `label`; optional metadata columns include `date`, `source`, `author`, and `category`. Accepted labels are `fake` and `real` (case-insensitive).
 
-## Important accuracy note
-The target requested was 90% accuracy. This is a target, not a result that can responsibly be guaranteed. An initial check of the supplied data found the article text to be highly synthetic/random-looking; text-only baseline models score around chance level (~50–51%) on a stratified hold-out split. This suggests the dataset may not contain a learnable relationship between article content and labels. The application displays the actual scores from its own evaluation rather than hard-coding 90%.
+## Methodology
+- Exact duplicate removal and missing-value treatment.
+- Text normalization and title/article concatenation.
+- Stratified 80/20 train-test split.
+- Accuracy, precision, recall, F1, ROC-AUC and confusion matrices.
+- Three-fold stratified cross-validation for the selected candidate.
+- The best model is selected by hold-out test F1 for the demonstration app.
 
-For a meaningful 90%+ result, use a verified, naturally collected and correctly labelled dataset with sufficient real article content. Do not leak labels or split duplicates across train and test. Also evaluate on a separate external dataset before claiming real-world performance.
-
-## Academic integrity
-Predictions are experimental and should not be treated as verified fact-checks. Accuracy alone is insufficient; report precision, recall, F1, confusion matrix, class balance and limitations.
+## Important limitations
+The included dataset should be audited for provenance, representativeness, and possible synthetic or artificial text. Predictive scores on this dataset do not establish real-world fact-checking ability. Do not use this prototype to label people, make consequential decisions, or publish claims without independent verification. No accuracy target is hard-coded; reported results come from the actual test split.
