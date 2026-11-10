@@ -8,7 +8,7 @@
 6. Data cleaning and preprocessing
 7. EDA: univariate, bivariate, multivariate findings and statistical tests
 8. Methodology/workflow and leakage prevention
-9. Baseline and model development (at least three models)
+9. Baseline and model development (at least four models)
 10. Cross-validation and hyperparameter tuning
 11. Evaluation: accuracy, precision, recall, F1, ROC-AUC, confusion matrix
 12. Model comparison table and selected model justification
