@@ -1,4 +1,4 @@
-# Project Report: Verity — Fake News Detection Using Machine Learning
+# Project Report:  Fake News Detection Using Machine Learning
 
 ## 1. Problem Statement
 Misinformation can spread rapidly through online platforms. This project explores a text-classification workflow that distinguishes news articles labelled `fake` or `real` using supervised machine learning.
