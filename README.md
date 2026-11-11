@@ -1,6 +1,6 @@
  #  Fake News Detection using Machine Learning
 
-A Python-only Streamlit application for exploring a labelled news dataset, cleaning text, comparing four classical machine-learning classifiers, and screening user-entered articles.
+A Python-only Streamlit application for exploring a labelled news dataset, cleaning text, comparing four classical machine-learning classifiers, and screening user-entered articles
 
 ## Models
 1. Logistic Regression(LR)
