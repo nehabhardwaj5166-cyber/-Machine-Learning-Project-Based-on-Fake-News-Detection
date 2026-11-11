@@ -3,7 +3,7 @@
 A Python-only Streamlit application for exploring a labelled news dataset, cleaning text, comparing four classical machine-learning classifiers, and screening user-entered articles.
 
 ## Models
-1. Logistic Regression
+1. Logistic Regression(LR)
 2. Multinomial Naive Bayes
 3. Linear Support Vector Machine (Linear SVM)
 4. Random Forest
