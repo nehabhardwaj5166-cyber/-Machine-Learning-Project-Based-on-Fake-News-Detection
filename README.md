@@ -8,7 +8,7 @@ A Python-only Streamlit application for exploring a labelled news dataset, clean
 3. Linear Support Vector Machine (Linear SVM)
 4. Random Forest
 
-## Project structure
+## Project structure.
 ```text
 fake_news_detection_project/
 ├── app.py
